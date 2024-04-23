@@ -1,4 +1,4 @@
-mod camera;
+pub mod camera;
 use camera::Camera;
 use colored::Colorize;
 use crossterm::cursor;
