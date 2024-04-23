@@ -1,0 +1,13 @@
+[package]
+name = "console_renderer"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ABC_Game_Engine = { git = "https://github.com/ABC-Engine/ABC-Game-Engine" }
+colored = "2.1.0"
+crossterm = "0.27.0"
+image = "0.25.1"
+rand = "0.8.5"
