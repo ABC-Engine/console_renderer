@@ -6,7 +6,7 @@ pub struct Camera {
     pub(crate) width: u32,
     pub(crate) height: u32,
     // if false, the camera will not be used by the renderer
-    // if multiple cameras are active, the program will panic
+    // if multiple cameras are active, the program will pick the first one
     pub(crate) is_active: bool,
 }
 

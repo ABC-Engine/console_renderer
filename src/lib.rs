@@ -10,6 +10,8 @@ use std::{
 };
 use ABC_Game_Engine::{EntitiesAndComponents, Entity, System};
 
+mod input;
+
 use self::mask::Mask;
 pub mod ascii_renderer;
 mod load_texture;
@@ -320,6 +322,19 @@ impl Renderer {
         }
 
         ascii_renderer::render_pixel_grid(self, &pixel_grid, &scene_params);
+
+        {
+            let entities_and_components_ptr = scene as *mut EntitiesAndComponents;
+            // update the input resource
+            // SAFETY: the input resource does not access itself, so it safe.
+            if let Some(input) = (unsafe { &mut *entities_and_components_ptr })
+                .get_resource_mut::<input::ConsoleInput>()
+            {
+                input.update(scene);
+            } else {
+                scene.add_resource(input::ConsoleInput::new());
+            }
+        }
     }
 
     // not thread safe
