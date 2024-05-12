@@ -58,10 +58,8 @@ impl ConsoleInput {
             }
         }
         for key in self.keys_down.iter() {
-            input.set_key_state(*key)
+            input.set_key_down(*key)
         }
-
-        input.advance_frame();
     }
 }
 
