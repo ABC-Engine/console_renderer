@@ -2,11 +2,16 @@
 name = "console_renderer"
 version = "0.1.0"
 edition = "2021"
+description = "A console renderer for the ABC Game Engine"
+license = "MIT"
+keywords = ["graphics", "console", "renderer", "gamedev"]
+authors = ["ABC-Engine", "Ethan Almloff"]
+categories = ["graphics", "game-development", "rendering", "rendering::engine"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-ABC_Game_Engine = { git = "https://github.com/ABC-Engine/ABC-Game-Engine"}
+ABC_Game_Engine = "0.1.2"
 colored = "2.1.0"
 crossterm = "0.27.0"
 image = "0.25.1"
